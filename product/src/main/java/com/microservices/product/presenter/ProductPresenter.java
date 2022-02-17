@@ -3,6 +3,7 @@ package com.microservices.product.presenter;
 import com.microservices.product.entity.Product;
 import com.microservices.product.service.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,6 +26,7 @@ public class ProductPresenter {
     }
 
     @PostMapping("/products")
+    @ResponseStatus(HttpStatus.CREATED)
     public Product createNewProduct(@RequestBody Product product) {
         return productService.createNewProduct(product);
     }
