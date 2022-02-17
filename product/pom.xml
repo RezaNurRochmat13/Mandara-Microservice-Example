@@ -52,7 +52,6 @@
 			<version>2.6.3</version>
 		</dependency>
 
-
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
