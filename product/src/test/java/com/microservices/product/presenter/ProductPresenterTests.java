@@ -28,7 +28,7 @@ public class ProductPresenterTests {
     @Test
     void getAllProducts() throws Exception {
         RequestBuilder requestBuilders = MockMvcRequestBuilders
-                .get("/products")
+                .get("/api/v1/products")
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON);
 
@@ -43,7 +43,7 @@ public class ProductPresenterTests {
     @Test
     void getSingleProduct() throws Exception {
         RequestBuilder requestBuilders = MockMvcRequestBuilders
-                .get("/products/" + new Random().nextLong())
+                .get("/api/v1/products/" + new Random().nextLong())
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON);
 
@@ -62,7 +62,7 @@ public class ProductPresenterTests {
         payload.put("stock", new Random().nextInt());
 
         RequestBuilder requestBuilders = MockMvcRequestBuilders
-                .post("/products")
+                .post("/api/v1/products")
                 .accept(MediaType.APPLICATION_JSON)
                 .content(payload.toJSONString())
                 .contentType(MediaType.APPLICATION_JSON);
@@ -78,7 +78,7 @@ public class ProductPresenterTests {
     @Test
     void createNewProductWithoutPayload() throws Exception {
         RequestBuilder requestBuilders = MockMvcRequestBuilders
-                .post("/products")
+                .post("/api/v1/products")
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON);
 
@@ -97,7 +97,7 @@ public class ProductPresenterTests {
         payload.put("stock", new Random().nextInt());
 
         RequestBuilder requestBuilders = MockMvcRequestBuilders
-                .put("/products/" + new Random().nextLong())
+                .put("/api/v1/products/" + new Random().nextLong())
                 .accept(MediaType.APPLICATION_JSON)
                 .content(payload.toJSONString())
                 .contentType(MediaType.APPLICATION_JSON);
@@ -113,7 +113,7 @@ public class ProductPresenterTests {
     @Test
     void updateWithoutPayloadProduct() throws Exception {
         RequestBuilder requestBuilders = MockMvcRequestBuilders
-                .put("/products/" + new Random().nextLong())
+                .put("/api/v1/products/" + new Random().nextLong())
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON);
 
@@ -128,7 +128,7 @@ public class ProductPresenterTests {
     @Test
     void deleteProductById() throws Exception {
         RequestBuilder requestBuilders = MockMvcRequestBuilders
-                .put("/products/" + new Random().nextLong())
+                .put("/api/v1/products/" + new Random().nextLong())
                 .accept(MediaType.APPLICATION_JSON)
                 .contentType(MediaType.APPLICATION_JSON);
 
